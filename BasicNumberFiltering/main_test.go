@@ -1,4 +1,4 @@
-package main
+package numberFiltering
 
 import (
 	"reflect"
@@ -11,7 +11,8 @@ func TestEvenNumbers(t *testing.T) {
 	want := []int{2, 4, 6, 8, 10}
 
 	// when
-	output := GetIntSlice(numRange).filter(isEven)
+	// output := GetIntSlice(numRange).filter(isEven)
+	output := evenNumbers(numRange)
 
 	// then
 	if !reflect.DeepEqual(output, want) {
@@ -26,7 +27,8 @@ func TestOddNumbers(t *testing.T) {
 	want := []int{1, 3, 5, 7, 9}
 
 	// when
-	output := GetIntSlice(numRange).filter(isOdd)
+	// output := GetIntSlice(numRange).filter(isOdd)
+	output := oddNumbers(numRange)
 
 	// then
 	if !reflect.DeepEqual(output, want) {
@@ -40,7 +42,8 @@ func TestPrimeNumbers(t *testing.T) {
 	want := []int{2, 3, 5, 7}
 
 	// when
-	output := GetIntSlice(numRange).filter(isPrime)
+	// output := GetIntSlice(numRange).filter(isPrime)
+	output := primeNumbers(numRange)
 
 	// then
 	if !reflect.DeepEqual(output, want) {
@@ -54,7 +57,9 @@ func TestOddPrimeNumbers(t *testing.T) {
 	want := []int{3, 5, 7}
 
 	// when
-	output := GetIntSlice(numRange).filter(isOddPrime)
+	// output := GetIntSlice(numRange).filter(isOddPrime)
+	// output := GetIntSlice(GetIntSlice(numRange).filter(isOdd)).filter(isPrime)
+	output := oddPrimeNumbers(numRange)
 
 	// then
 	if !reflect.DeepEqual(output, want) {

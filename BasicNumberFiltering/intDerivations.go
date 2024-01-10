@@ -1,4 +1,4 @@
-package main
+package numberFiltering
 
 func isEven(number int) bool {
 	return number % 2 == 0
@@ -7,7 +7,6 @@ func isEven(number int) bool {
 func isOdd(number int) bool {
 	return !isEven(number)
 }
-
 
 func isPrime(n int) bool {
 	if n == 1 {
@@ -23,6 +22,10 @@ func isPrime(n int) bool {
 	return true
 }
 
-func isOddPrime(n int) bool {
-	return isOdd(n) && isPrime(n)
+func oddPrimePredicates() []Predicate {
+	predicates := []Predicate {
+		isOdd,
+		isPrime,
+	}
+	return predicates
 }
