@@ -24,3 +24,6 @@ func oddPrimeNumbers(numbers []int) []int {
 
 // Given a list of integers, write a program to return only the even and multiples of 5 from this list.
 // evenMultipleOf5Numbers := numbersWrapper.filter(isEvenMultipleOf(5))
+func evenMultipleOf(numbers []int) []int {
+	return filter(numbers, evenMultipleOfPredicates()...)
+}
