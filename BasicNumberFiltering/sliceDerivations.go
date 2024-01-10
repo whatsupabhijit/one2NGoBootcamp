@@ -40,13 +40,8 @@ func Filter(numbers []int, predicate func(int) bool) []int {
 }
 
 
-
 type Predicate func(n int) bool
-
 type PredicateList []Predicate
-
-// 1 2 3
-// prime odd
 
 func (predicate PredicateList) forAll(number int) bool {
 	for _, p := range predicate {
@@ -58,18 +53,12 @@ func (predicate PredicateList) forAll(number int) bool {
 	return true
 }
 
-
 func filter(numbers []int, predicates ...Predicate) []int {
 	var result []int
+	predicateList := PredicateList(predicates)
+
 	for _, num := range numbers {
-		allPredicateSatisfied := true
-		for _, predicate := range predicates {
-			if !predicate(num) {
-				allPredicateSatisfied = false
-				break
-			}
-		}
-		if allPredicateSatisfied {
+		if predicateList.forAll(num) {
 			result = append(result, num)
 		}
 	}
