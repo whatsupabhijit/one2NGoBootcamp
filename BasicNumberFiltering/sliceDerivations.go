@@ -53,12 +53,25 @@ func (predicate PredicateList) forAll(number int) bool {
 	return true
 }
 
-func filter(numbers []int, predicates ...Predicate) []int {
+func (predicate PredicateList) any(number int) bool {
+	for _, p := range predicate {
+		if p(number) {
+			return true
+		}
+	}
+
+	return false
+}
+
+func filter(numbers []int, isForAll bool, predicates ...Predicate) []int {
 	var result []int
 	predicateList := PredicateList(predicates)
 
 	for _, num := range numbers {
-		if predicateList.forAll(num) {
+		if isForAll && predicateList.forAll(num) {
+			result = append(result, num)
+		}
+		if !isForAll && predicateList.any(num) {
 			result = append(result, num)
 		}
 	}
