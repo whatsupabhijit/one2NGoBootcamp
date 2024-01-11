@@ -1,5 +1,7 @@
 package numberFiltering
 
+// TODO: Move this commented code to blog post about the learning you had.
+
 // type IntSlice struct {
 // 	data []int
 // }

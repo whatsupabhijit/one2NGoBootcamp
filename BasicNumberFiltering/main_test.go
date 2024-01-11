@@ -96,6 +96,7 @@ func TestOddMultipleOf3GreaterThan10Numbers(t *testing.T) {
 	}
 }
 
+// TODO: Merge the TC1 and TC2 in a single test case single function, how do you do it? Blog about it once you learn.
 func TestFilterAllTC1(t *testing.T) {
 	// given
 	numRange := []int {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}

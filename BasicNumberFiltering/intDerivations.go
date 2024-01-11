@@ -8,6 +8,7 @@ func isOdd(number int) bool {
 	return !isEven(number)
 }
 
+// TODO: Write HOF so that you don't need to write multiple functions. WRite a blog about it
 func isLessThan15(number int) bool{
 	return number < 15
 }
