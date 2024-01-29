@@ -50,28 +50,3 @@ func isMultipleOf3(number int) bool {
 func isMultipleOf5(number int) bool {
 	return number % 5 == 0
 }
-
-func oddPrimePredicates() []Predicate {
-	predicates := []Predicate {
-		isOdd,
-		isPrime,
-	}
-	return predicates
-}
-
-func evenMultipleOfPredicates() []Predicate {
-	predicates := []Predicate {
-		isEven,
-		isMultipleOf5,
-	}
-	return predicates
-}
-
-func oddMultipleOf3Gt10Predicates() []Predicate {
-	predicates := []Predicate {
-		isOdd,
-		isMultipleOf3,
-		isGreaterThan10,
-	}
-	return predicates
-}
